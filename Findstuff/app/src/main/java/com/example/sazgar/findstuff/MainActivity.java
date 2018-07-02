@@ -1,13 +1,19 @@
 package com.example.sazgar.findstuff;
 
 import android.support.annotation.IdRes;
+import android.support.annotation.RawRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.SeekBar;
+import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity {
 EditText name;
@@ -24,7 +30,9 @@ EditText name;
         sayhello = (Button) findViewById(R.id.sayhello);
         name=(EditText) findViewById(R.id.name);
         text2=(TextView)findViewById(R.id.text2);
-
+        Switch sw=(Switch)findViewById(R.id.switch1);
+        SeekBar se=(SeekBar)findViewById(R.id.seekBar);
+        RadioButton re=(RadioButton)findViewById(R.id.radioButton);
     }
     public void press(View view){
         //1
@@ -51,6 +59,46 @@ EditText name;
 
     }
 
+public void switchh(View view){
+    Switch sw=(Switch)findViewById(R.id.switch1);
+    boolean roshanaee=sw.isChecked();
+    String vazeiat;
+    if(roshanaee){
+        vazeiat="on";
+    }
+    else {
+        vazeiat="off";
 
+    }
+
+    TextView t3=(TextView)findViewById(R.id.text3);
+    t3.setText("lights are   " + vazeiat);
+
+}
+    public void heat(View view){
+        TextView tfinal=(TextView)findViewById(R.id.texttoggle);
+        //recognize toggle button
+        ToggleButton tog=(ToggleButton)findViewById(R.id.toggleButton1);
+        boolean taarik=tog.isChecked();
+        String quality;
+
+        if(taarik){
+            quality=" on";
+            Toast.makeText(this,"lights clicked",Toast.LENGTH_LONG).show();
+
+        }
+        else {
+            quality="off";
+            Toast.makeText(this,"lights clicked",Toast.LENGTH_LONG).show();
+        }
+
+        tfinal.setText("heaters of this part are " + quality);
+
+    }
+    public void next(View view){
+        Toast.makeText(this,"there is no other page  hahahahahah"
+        ,Toast.LENGTH_LONG).show();
+
+    }
     }
 
