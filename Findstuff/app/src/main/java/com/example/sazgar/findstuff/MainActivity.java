@@ -103,20 +103,89 @@ public void switchh(View view){
     */
     }
 
-    public void press(View view) {
+    public void laugh(View view) {
         //1 farakhani  views
-        ImageView imleft = (ImageView) findViewById(R.id.firsimage);
-       EditText edname=(EditText)findViewById(R.id.entername);
-        ImageView imfinal=(ImageView)findViewById(R.id.finalimage);
+        ImageView imleft = (ImageView) findViewById(R.id.firsleftimage);
+        EditText edname = (EditText) findViewById(R.id.entername);
+        ImageView imfinal = (ImageView) findViewById(R.id.finalimage);
+        TextView tefinal = (TextView) findViewById(R.id.textviewfinal);
+        Switch swmale = (Switch) findViewById(R.id.switchmale);
+
         //2 get the image of them
-        Drawable message=imleft.getDrawable();
-        Drawable namemessage= (Drawable) edname.getText();
-        //set the image in the fina limage view
-        imfinal.setImageDrawable(message.getCurrent());
+        Drawable message = imleft.getDrawable();
+
+        String namemessage = edname.getText().toString();
+        boolean male = swmale.isChecked();
+        String jensiat;
+        if (male) {
+            jensiat = "mr";
+        } else {
+            jensiat = "mrs";
+        }
+        //3set the image in the fina limage view
+        imfinal.setImageDrawable(message);
+
+        //4 set text texview final
+        tefinal.setText(jensiat + namemessage + " is laghing");
+
+
+    }
+
+    public void cry(View view) {
+        //1 farakhani  views
+        ImageView imcenter = (ImageView) findViewById(R.id.firscenterimage);
+        EditText edname = (EditText) findViewById(R.id.entername);
+        ImageView imfinal = (ImageView) findViewById(R.id.finalimage);
+        TextView tefinal = (TextView) findViewById(R.id.textviewfinal);
+        Switch swmale = (Switch) findViewById(R.id.switchmale);
+
+        //2 get the image of them
+        Drawable message = imcenter.getDrawable();
+
+        String namemessage = edname.getText().toString();
+        boolean male = swmale.isChecked();
+        String jensiatt;
+        if (male) {
+            jensiatt = "mr";
+        } else {jensiatt = "mrs";
+
+        }
+
+        //3set the image in the fina limage view
+        imfinal.setImageDrawable(message);
+
+        //4 set text textview final
+        tefinal.setText(jensiatt +" "+ namemessage + " is crying");
+    }
+
+    public void look(View view) {
+        //1 farakhani  views
+        ImageView imright = (ImageView) findViewById(R.id.firsrightimage);
+        EditText edname = (EditText) findViewById(R.id.entername);
+        ImageView imfinal = (ImageView) findViewById(R.id.finalimage);
+        TextView tefinal = (TextView) findViewById(R.id.textviewfinal);
+        Switch swmale = (Switch) findViewById(R.id.switchmale);
+
+        //2 get the image of them
+        Drawable message = imright.getDrawable();
+
+        String namemessage = edname.getText().toString();
+        boolean male = swmale.isChecked();
+        String jensiat;
+        if (male) {
+            jensiat = "mr";
+        } else {
+            jensiat = "mrs";
+        }
+            //3set the image in the fina limage view
+            imfinal.setImageDrawable(message);
+
+            //4 set text texview final
+            tefinal.setText(jensiat +" "+ namemessage + " is wishing");
 
 
 
 
     }
-}
 
+}
