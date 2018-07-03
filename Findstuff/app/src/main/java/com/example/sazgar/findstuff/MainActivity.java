@@ -1,5 +1,6 @@
 package com.example.sazgar.findstuff;
 
+import android.graphics.drawable.Drawable;
 import android.support.annotation.IdRes;
 import android.support.annotation.RawRes;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.SeekBar;
 import android.widget.Switch;
@@ -16,22 +18,21 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity {
-EditText name;
+    EditText name;
     Button sayhello;
     TextView text2;
-
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.findview);
-
+        setContentView(R.layout.sticker);
+/*
         sayhello = (Button) findViewById(R.id.sayhello);
         name=(EditText) findViewById(R.id.name);
         text2=(TextView)findViewById(R.id.text2);
         Switch sw=(Switch)findViewById(R.id.switch1);
-        SeekBar se=(SeekBar)findViewById(R.id.seekBar);
+
         RadioButton re=(RadioButton)findViewById(R.id.radioButton);
     }
     public void press(View view){
@@ -99,6 +100,23 @@ public void switchh(View view){
         Toast.makeText(this,"there is no other page  hahahahahah"
         ,Toast.LENGTH_LONG).show();
 
+    */
     }
+
+    public void press(View view) {
+        //1 farakhani  views
+        ImageView imleft = (ImageView) findViewById(R.id.firsimage);
+       EditText edname=(EditText)findViewById(R.id.entername);
+        ImageView imfinal=(ImageView)findViewById(R.id.finalimage);
+        //2 get the image of them
+        Drawable message=imleft.getDrawable();
+        Drawable namemessage= (Drawable) edname.getText();
+        //set the image in the fina limage view
+        imfinal.setImageDrawable(message.getCurrent());
+
+
+
+
     }
+}
 
